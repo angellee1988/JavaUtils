@@ -6,25 +6,333 @@
   <packaging>war</packaging>
   
   
-  <repositories>  
-    <repository><!-- Spring-kafka的资源库地址 -->  
-        <id>spring-milestones</id>  
-        <name>Spring Milestones</name>  
-        <url>https://repo.spring.io/libs-milestone</url>  
-        <snapshots>  
-            <enabled>false</enabled>  
-        </snapshots>  
-    </repository>  
-</repositories>
+	<properties>
+        <org.springframework-version>4.0.7.RELEASE</org.springframework-version>
+        <org.slf4j-version>1.6.6</org.slf4j-version>
+        <com.google.zxing-version>2.2</com.google.zxing-version>
+        <com.ttpai.soa.api-version>1.2.3</com.ttpai.soa.api-version>
+    </properties>
 
-  <properties>  
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
-        <springframework.version>4.2.2.RELEASE</springframework.version>  
-        <quartz.version>2.2.2</quartz.version>  
-    </properties>  
-  
-    <dependencies>  
-    	<dependency>
+    <repositories>
+	    <repository><!-- Spring-kafka的资源库地址 -->  
+	        <id>spring-milestones</id>  
+	        <name>Spring Milestones</name>  
+	        <url>https://repo.spring.io/libs-milestone</url>  
+	        <snapshots>  
+	            <enabled>false</enabled>  
+	        </snapshots>  
+	    </repository>  
+        <repository>
+            <id>snapshotsId</id>
+            <name>snapshots</name>
+            <url>http://172.16.2.101:8081/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>thirdpartyId</id>
+            <name>thirdparty</name>
+            <url>http://172.16.2.101:8081/nexus/content/repositories/thirdparty/</url>
+        </repository>
+        <repository>
+            <id>releasesId</id>
+            <name>releases</name>
+            <url>http://172.16.2.101:8081/nexus/content/repositories/releases/</url>
+        </repository>
+
+    </repositories>
+    <dependencies>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.7.4</version>
+        </dependency>
+
+		<dependency>
+            <groupId>org.ops4j.pax.url</groupId>
+            <artifactId>pax-url-classpath</artifactId>
+            <version>2.4.7</version>
+        </dependency>
+
+		<dependency>
+			<groupId>com.ttpai</groupId>
+			<artifactId>auctionState.notify</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>2.5.3</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- cglib -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib-nodep</artifactId>
+            <version>2.2</version>
+        </dependency>
+        <!-- zookeeper -->
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>3.4.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>0.1</version>
+        </dependency>
+        <!-- fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+        <!-- jackson -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.0.6</version>
+        </dependency>
+        <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${org.springframework-version}</version>
+            <exclusions>
+                <!-- Exclude Commons Logging in favor of SLF4j -->
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons</artifactId>
+            <version>1.9.1.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>1.5.0.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.amqp</groupId>
+            <artifactId>spring-rabbit</artifactId>
+            <version>1.4.6.RELEASE</version>
+        </dependency>
+        <!-- junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.9</version>
+        </dependency>
+        <!-- mysql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.10</version>
+        </dependency>
+        <!-- c3p0 -->
+        <dependency>
+            <groupId>c3p0</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.1.2</version>
+        </dependency>
+        <!-- druid -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.15</version>
+        </dependency>
+
+        <!-- rose -->
+        <dependency>
+            <groupId>com.54chen</groupId>
+            <artifactId>paoding-rose-scanning</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.54chen</groupId>
+            <artifactId>paoding-rose</artifactId>
+            <version>1.0</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>servlet-api</artifactId>
+                    <groupId>javax.servlet</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.54chen</groupId>
+            <artifactId>paoding-rose-jade</artifactId>
+            <version>1.1</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.54chen</groupId>
+            <artifactId>paoding-rose-portal</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${org.slf4j-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${org.slf4j-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${org.slf4j-version}</version>
+        </dependency>
+
+        <!-- Servlet -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+
+        <!-- rabbitMQ -->
+        <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+        <!-- redis -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.6.2</version>
+        </dependency>
+        <!-- tfs client -->
+        <dependency>
+            <groupId>com.ttpai.tfs</groupId>
+            <artifactId>tfs_client</artifactId>
+            <version>0.0.2-SNAPSHOT</version>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>opensymphony</groupId>-->
+        <!--<artifactId>quartz-all</artifactId>-->
+        <!--<version>1.6.3</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>quartz</groupId>
+            <artifactId>quartz</artifactId>
+            <version>1.5.2</version>
+        </dependency>
+
+        <!-- ttpai soa -->
+        <dependency>
+            <groupId>com.ttpai.soa</groupId>
+            <artifactId>api</artifactId>
+            <version>${com.ttpai.soa.api-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ttpai</groupId>
+            <artifactId>auctionState.notify</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!-- poi -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.10-FINAL</version>
+        </dependency>
+        <!-- http client -->
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+        </dependency>
+		<!-- 二维码 -->
+		<dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>core</artifactId>
+			<version>${com.google.zxing-version}</version>
+		</dependency>
+		<!-- 二维码 -->
+		<dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>javase</artifactId>
+			<version>${com.google.zxing-version}</version>
+		</dependency>
+		<!-- 七牛云sdk -->
+       <dependency>
+  		<groupId>com.qiniu</groupId>
+  		<artifactId>qiniu-java-sdk</artifactId>
+  		<version>7.1.2</version>
+	   </dependency>
+	   
+	   <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka_2.10</artifactId>
             <version>0.8.2.1</version>
@@ -34,29 +342,8 @@
             <artifactId>spring-integration-kafka</artifactId>
             <version>1.2.0.RELEASE</version>
         </dependency>
-        <dependency>  
-            <groupId>org.springframework</groupId>  
-            <artifactId>spring-core</artifactId>  
-            <version>${springframework.version}</version>  
-        </dependency>  
-        <dependency>  
-            <groupId>org.springframework</groupId>  
-            <artifactId>spring-context-support</artifactId>  
-            <version>${springframework.version}</version>  
-        </dependency>  
-        <!-- Transaction dependency is required with Quartz integration -->  
-        <dependency>  
-            <groupId>org.springframework</groupId>  
-            <artifactId>spring-tx</artifactId>  
-            <version>${springframework.version}</version>  
-        </dependency>  
-           
-        <!-- Quartz framework -->  
-        <dependency>  
-            <groupId>org.quartz-scheduler</groupId>  
-            <artifactId>quartz</artifactId>  
-            <version>${quartz.version}</version>  
-        </dependency>  
-    </dependencies>  
+        
+    </dependencies>
+
     
 </project>
