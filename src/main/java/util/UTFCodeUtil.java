@@ -6,9 +6,6 @@ import java.net.URLEncoder;
 
 /**
  * UTF编码解码
- * @author xingjiang.li
- *
- * 2016年8月17日
  */
 public class UTFCodeUtil {
 

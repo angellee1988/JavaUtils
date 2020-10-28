@@ -3,7 +3,7 @@
 
 <beans>    
         <!-- 要调用的工作类 -->
-        <bean id="quartzJob" class="com.ttpai.QuartzJob"></bean>
+        <bean id="quartzJob" class="org.lee.QuartzJob"></bean>
         <!-- 定义调用对象和调用对象的方法 -->
         <bean id="jobtask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
             <!-- 调用的类 -->

@@ -15,7 +15,7 @@ public class DesEncryptUtil{
     private Key key;
  
     public DesEncryptUtil() {
-        this.getKey("ttpai");
+        this.getKey("river");
     }
  
     /**
@@ -128,13 +128,4 @@ public class DesEncryptUtil{
         return byteFina;
     }
      
-    public static void main(String args[]) {
-        DesEncryptUtil des = new DesEncryptUtil();
-        // 实例化一个对像
-        String strEnc = des.getEncString("2&15555555553&上海&20118261&1");
-        //加密字符串,返回String的密文
-        System.out.println("加密文:" + strEnc);
-        String strDes = des.getDesString(strEnc);// 把String 类型的密文解密
-        System.out.println("解密文:" + strDes);
-    }
 }

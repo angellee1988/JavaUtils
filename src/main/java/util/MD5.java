@@ -7,9 +7,6 @@ public class MD5 {
      * @param s       待加密字符串
      * @param charset 编码格式
      * @return
-     * @Description: TODO
-     * @author: simon.JY
-     * @date: 2015年6月30日 下午5:36:08
      */
     public final static String MD5Encoder(String s, String charset) {
         try {
@@ -32,8 +29,6 @@ public class MD5 {
 
     /**
      * @param bytes 需要编码的字节
-     * @author: kail
-     * @date: 2015年9月1日 下午16:36
      */
     public final static String MD5Encoder(byte[] bytes) {
         try {

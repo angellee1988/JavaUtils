@@ -5,9 +5,6 @@ import java.util.List;
 
 /**
  * @Description: 分页查询包装类
- * @author: simon.JY
- * @date: 2015年6月30日
- * 久兴信息技术(上海)有限公司
  */
 public class Pagelab implements Serializable {
 
@@ -85,7 +82,6 @@ public class Pagelab implements Serializable {
         return pageSize;
     }
 
-    //分页查询最多只能50条数据
     public void setPageSize(Integer pageSize) {
         pageSize = (null == pageSize || pageSize > 50 || pageSize < 0) ? DEFAULT_PAGE_SIZE : pageSize;
         this.pageSize = pageSize;

@@ -10,13 +10,8 @@ public class ChinaInitial {
     /**
      * 
      * @Description: 返回首字母
-     * @author: simon.JY
      * @param strChinese
      * @param upCase
-     * @return
-     * @throws BaseException
-     * @date: 2015年7月23日 下午5:24:03
-     *
      */
     public static String getPYIndexStr(String strChinese, boolean upCase) throws BaseException  {
         if(null==strChinese){
@@ -47,11 +42,6 @@ public class ChinaInitial {
     /**
      * 
      * @Description: 得到首字母
-     * @author: simon.JY
-     * @param strChinese
-     * @param upCase
-     * @return
-     * @date: 2015年7月23日 下午5:13:54
      *
      */
     private static char getPYIndexChar(char strChinese, boolean upCase) {

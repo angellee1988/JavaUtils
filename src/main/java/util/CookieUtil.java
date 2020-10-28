@@ -10,11 +10,6 @@ public class CookieUtil {
 	/**
 	 * 
 	 * @Description: 根据名称删除cookie
-	 * @author: simon.JY
-	 * @param request
-	 * @param response
-	 * @param name
-	 * @date: 2015年7月1日 下午5:13:45
 	 *
 	 */
 	public static void removeCookie(HttpServletRequest request,
@@ -34,11 +29,6 @@ public class CookieUtil {
 	/**
 	 * 
 	 * @Description: 根据Cookie名称得到Cookie对象，不存在该对象则返回Null
-	 * @author: simon.JY
-	 * @param request
-	 * @param name
-	 * @return
-	 * @date: 2015年7月1日 下午5:21:35
 	 *
 	 */
 	public static Cookie getCookie(HttpServletRequest request, Object name) {
@@ -59,11 +49,6 @@ public class CookieUtil {
 	/**
 	 * 
 	 * @Description: 根据Cookie名称得到Cookie对象，不存在该对象则返回Null
-	 * @author: simon.JY
-	 * @param request
-	 * @param name
-	 * @return
-	 * @date: 2015年7月1日 下午5:21:35
 	 *
 	 */
 	public static String getCookieValue(HttpServletRequest request, Object name) {
@@ -96,13 +81,6 @@ public class CookieUtil {
 	/**
 	 * 
 	 * @Description: 添加一条新的Cookie，可以指定过期时间(单位：秒)
-	 * @author: simon.JY
-	 * @param response
-	 * @param name
-	 * @param value  传入需要，URLEncoder.encode()处理的参数
-	 * @param maxValue
-	 * @param domain
-	 * @date: 2015年7月1日 下午5:36:34
 	 *
 	 */
 	public static void setCookie(HttpServletResponse response, String name,

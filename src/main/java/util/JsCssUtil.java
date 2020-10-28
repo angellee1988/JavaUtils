@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class JsCssUtil implements Serializable{
 	
-	private static final String MAP_URL="http://cdn20.ttpaicdn.com/map.json";
+	private static final String MAP_URL="http://cdn20.cdn.com/map.json";
 	
 	private static long timestamp;
 	

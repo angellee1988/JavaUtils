@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.ttpai</groupId>
+  <groupId>org.lee</groupId>
   <artifactId>JavaUtils</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
@@ -10,7 +10,6 @@
         <org.springframework-version>4.0.7.RELEASE</org.springframework-version>
         <org.slf4j-version>1.6.6</org.slf4j-version>
         <com.google.zxing-version>2.2</com.google.zxing-version>
-        <com.ttpai.soa.api-version>1.2.3</com.ttpai.soa.api-version>
     </properties>
 
     <repositories>
@@ -53,12 +52,6 @@
             <version>2.4.7</version>
         </dependency>
 
-		<dependency>
-			<groupId>com.ttpai</groupId>
-			<artifactId>auctionState.notify</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-		
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo</artifactId>
@@ -271,12 +264,6 @@
             <artifactId>jedis</artifactId>
             <version>2.6.2</version>
         </dependency>
-        <!-- tfs client -->
-        <dependency>
-            <groupId>com.ttpai.tfs</groupId>
-            <artifactId>tfs_client</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
-        </dependency>
         <!--<dependency>-->
         <!--<groupId>opensymphony</groupId>-->
         <!--<artifactId>quartz-all</artifactId>-->
@@ -286,19 +273,6 @@
             <groupId>quartz</groupId>
             <artifactId>quartz</artifactId>
             <version>1.5.2</version>
-        </dependency>
-
-        <!-- ttpai soa -->
-        <dependency>
-            <groupId>com.ttpai.soa</groupId>
-            <artifactId>api</artifactId>
-            <version>${com.ttpai.soa.api-version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.ttpai</groupId>
-            <artifactId>auctionState.notify</artifactId>
-            <version>1.0.0</version>
         </dependency>
 
         <!-- poi -->

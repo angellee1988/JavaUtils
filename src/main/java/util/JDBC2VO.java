@@ -9,10 +9,7 @@ import java.util.Date;
 import java.util.Properties;
 
 /**
- * @Description:生成VO和基本的DAO
- * @author: rickycoder
- * @date: 2014年12月29日 下午8:55:08
- * see com.ttpai.boss.JavaBeanGenerator
+ * 生成VO和基本的DAO
  */
 public class JDBC2VO {
     private String host;
@@ -475,5 +472,4 @@ public class JDBC2VO {
         conn.close();
     }
 
-    //  see com.ttpai.boss.JavaBeanGenerator
 }

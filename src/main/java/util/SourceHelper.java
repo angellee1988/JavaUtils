@@ -33,8 +33,6 @@ public class SourceHelper {
 			try {
 				idss.add(Integer.valueOf(id));
 			} catch (NumberFormatException e) {
-				// TODO Auto-generated catch block
-				//不正常数字无视
 			}
 		}
 		return idss;

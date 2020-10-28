@@ -12,10 +12,6 @@ import java.util.Properties;
 /**
  * 属性文件公共类
  *
- * @Description:TODO
- * @author: 金砖
- * @date: 2014年12月19日 下午4:22:52
- * 久兴信息技术(上海)有限公司
  */
 public class PropertiesUtils  extends PropertyPlaceholderConfigurer {
     //所有属性文件的键值对
@@ -23,7 +19,6 @@ public class PropertiesUtils  extends PropertyPlaceholderConfigurer {
 
     /**
      * 添加所有属性到map中
-     * Description: TODO
      *
      * @param beanFactoryToProcess
      * @param props
@@ -60,9 +55,6 @@ public class PropertiesUtils  extends PropertyPlaceholderConfigurer {
     /**
      * @param name         属性名
      * @param defaultValue 如果获取不到属性值，使用默认值
-     * @Description: 角色/id 查询角色列表(分页)
-     * @author: kail
-     * @date: 2015年9月29日
      */
     public static String getContextProperty(String name, String defaultValue) {
         return ctxPropertiesMap.get(name) == null ? defaultValue : ctxPropertiesMap.get(name).toString();
@@ -70,9 +62,6 @@ public class PropertiesUtils  extends PropertyPlaceholderConfigurer {
 
     /**
      * @param name 属性名
-     * @Description: 角色/id 查询角色列表(分页)
-     * @author: kail
-     * @date: 2015年9月29日
      */
     public static Integer getInt(String name) {
         String value = getContextProperty(name);
@@ -86,9 +75,6 @@ public class PropertiesUtils  extends PropertyPlaceholderConfigurer {
     /**
      * @param name         属性名
      * @param defaultValue 如果获取不到属性值，使用默认值
-     * @Description: 角色/id 查询角色列表(分页)
-     * @author: kail
-     * @date: 2015年9月29日
      */
     public static Integer getInt(String name, Integer defaultValue) {
         String value = getContextProperty(name);

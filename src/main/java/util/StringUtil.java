@@ -9,7 +9,6 @@ import java.util.List;
 
 /**
  *字符串工具类  
- *@author zhouym 2015-07-27
  */
 public class StringUtil {
 

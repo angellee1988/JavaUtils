@@ -173,20 +173,6 @@ public class HttpClientUtil {
     }
     
     public static void main(String[] args) throws BaseException{
-//        Map map = new HashMap<String, Object>();
-//        map.put("username", "test2");
-//        map.put("password","12345678");
-//        System.out.println(HttpClientUtil.executeMethod("http://boss.ttpai.cn/account/user/login", map));
-          Map<String, Object> paramsMap = new HashMap<String, Object>();
-          paramsMap.put("hotline", "80203400");
-          paramsMap.put("userName", "admin");
-//          System.out.println(MD5.MD5Encoder(MD5.MD5Encoder("ttp123456")+"111545487"));
-          paramsMap.put("pwd", "3148b94878585bd4d23567032330ca0d");
-          paramsMap.put("seed", "111545487");
-          paramsMap.put("uniqueId", "51qiche_cti-1439444844.9009");
-          //System.out.println(HttpClientUtil.post(Constants.TIANRUN_DIALOUT_HISTORY, paramsMap));
-//          
-          System.out.println(HttpClientUtil.get("http://www.baidu.com"));
     }
 
 

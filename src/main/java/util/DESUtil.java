@@ -11,27 +11,29 @@ public class DESUtil {
 
     private static byte[] iv = {1, 2, 3, 4, 5, 6, 7, 8};
 
+    private static final String UTF8 = "utf-8";
+
     public static byte[] encryptDES(String encryptString, String encryptKey) throws Exception {
         IvParameterSpec zeroIv = new IvParameterSpec(iv);
         SecretKeySpec key = new SecretKeySpec(encryptKey.getBytes(), "DES");
         Cipher cipher = Cipher.getInstance("DES/CBC/PKCS5Padding");
         cipher.init(Cipher.ENCRYPT_MODE, key, zeroIv);
-        byte[] encryptedData = cipher.doFinal(encryptString.getBytes(Constants.UTF8));
+        byte[] encryptedData = cipher.doFinal(encryptString.getBytes(UTF8));
         return encryptedData;
     }
 
     public static String encryptDESwithBase64(String encryptString, String encryptKey) throws Exception {
-        return new String(Base64.encodeBase64(encryptDES(encryptString, encryptKey)), Constants.UTF8);
+        return new String(Base64.encodeBase64(encryptDES(encryptString, encryptKey)), UTF8);
     }
 
     //JAVA中DES解密实现方法如下：
     public static String decryptDES(byte[] encryptedData, String decryptKey) throws Exception {
         IvParameterSpec zeroIv = new IvParameterSpec(iv);
-        SecretKeySpec key = new SecretKeySpec(decryptKey.getBytes(Constants.UTF8), "DES");
+        SecretKeySpec key = new SecretKeySpec(decryptKey.getBytes(UTF8), "DES");
         Cipher cipher = Cipher.getInstance("DES/CBC/PKCS5Padding");
         cipher.init(Cipher.DECRYPT_MODE, key, zeroIv);
         byte decryptedData[] = cipher.doFinal(encryptedData);
-        String decryptedString = new String(decryptedData, Constants.UTF8);
+        String decryptedString = new String(decryptedData, UTF8);
         return decryptedString;
     }
 

@@ -2,12 +2,6 @@ package util;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**   
- * @Description:TODO 
- * @author: rickycoder
- * @date:   2014年12月24日 下午7:48:45   
- * 久兴信息技术(上海)有限公司   
- */
 public class AjaxUtil {
 	/**
 	 * 
